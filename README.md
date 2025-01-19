@@ -1,2 +1,3 @@
 # Rune:ShootemUp
- A cyberpunk Style Shootemup game
+ A cyberpunk Style Shootemup game (Currently in development)
+
