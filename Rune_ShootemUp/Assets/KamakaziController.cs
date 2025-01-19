@@ -6,7 +6,7 @@ public class KamakaziController : MonoBehaviour
  
  private Transform player;
  private Vector3 movementDirection;
- //public GameObject experienceOrb;
+ public GameObject runeOrb;
  //private bool _experinceDropped;
 
  void Start()
@@ -26,4 +26,14 @@ public class KamakaziController : MonoBehaviour
      Vector3 movement = direction * speed * Time.deltaTime;
      transform.Translate(movement);
  }
+
+private void OnTriggerEnter(Collider other) 
+ {
+    if(other.CompareTag("Player"))
+    {
+        Destroy(gameObject);
+        Instantiate(runeOrb, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(-23,25,51));
+    }   
+ }
+
 }

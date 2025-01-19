@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8648436492989141304}
   - component: {fileID: 2805431992992283971}
   - component: {fileID: 8420964538024174675}
+  - component: {fileID: -358355122149169055}
   - component: {fileID: 1136170878947898093}
   - component: {fileID: 1293060200718947934}
   m_Layer: 0
@@ -104,6 +105,29 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: -0.0032610893}
+--- !u!136 &-358355122149169055
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3195435920289763324}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
@@ -125,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  runeOrb: {fileID: 3771144614491894716, guid: 19f3a7d3b0461474a812890f3641d200, type: 3}
 --- !u!54 &1293060200718947934
 Rigidbody:
   m_ObjectHideFlags: 0
