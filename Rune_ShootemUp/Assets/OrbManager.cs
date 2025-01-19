@@ -6,9 +6,6 @@ public class OrbManager : MonoBehaviour
     private float lifeTime = 3f;
     private float startTime;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //Records the time when the object was created
@@ -24,5 +21,12 @@ public class OrbManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void OnTriggerEnter(Collider other) 
+    {
+        if(other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }    
     }
 }
