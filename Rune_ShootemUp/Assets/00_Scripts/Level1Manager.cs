@@ -4,11 +4,13 @@ public class Level1Manager : MonoBehaviour
 {
 
     public GameObject[] enemies;
-
+    //Enemy Data
     [SerializeField] private float spawnInterval = 5f;
     [SerializeField] private float spawnRadius = 10f;
     [SerializeField] private Transform target;
-    
+
+
+   
 
     // Update is called once per frame
     void Update()
