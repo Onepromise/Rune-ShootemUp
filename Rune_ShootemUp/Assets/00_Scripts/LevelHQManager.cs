@@ -5,18 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelHQManager : MonoBehaviour
 {
-    public GameManager GameManager;
+    public GameManager gameManager;
     public string sceneName;
 
-
+    //Menu Items
     public GameObject menuItems;
+    public Slider HQRuneContainerSlider;
+    public float HQRuneAmount;
+    public float HQRuneMax;
 
-
+    //Level Menu Items
     public GameObject levelMenu;
     public TMP_Text levelText;
     public TMP_Text playButtonText;
 
-
+    //Upgrade Menu Items
     public GameObject upgradeMenu;
     
 
@@ -25,11 +28,9 @@ public class LevelHQManager : MonoBehaviour
     
     public void Start() 
     {
+        
         OnMenuItemsButtonClick();
     }
-
-
-
     public void OnLevelButtonClick()
     {
         menuItems.SetActive(false);
