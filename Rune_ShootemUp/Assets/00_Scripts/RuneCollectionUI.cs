@@ -36,9 +36,8 @@ public class RuneCollectionUI : MonoBehaviour
     private void Update()
     {
         RuneCollectionMath();
-        Debug.Log("Slider at " + runePowerSlider.value);
-
         TeleporterMath();
+        LevelHQManager.levelRune = runeCollected;
     }
 
     private void RuneCollectionMath() 

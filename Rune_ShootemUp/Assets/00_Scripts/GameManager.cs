@@ -4,11 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager instance;
-
-
-    private static float HQTotalRunePower;
-    private static float currentAcquiredRunePower;
+    public static GameManager instance;
 
     public LevelHQManager levelHQManager;
     public RuneCollection runeCollection;
@@ -48,14 +44,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentSceneName = SceneManager.GetActiveScene().name;
-        currentAcquiredRunePower = runeCollection.runeCollected;
     }
 
 
 
     private void Update()
     {
-        RuneUpdater();
         LevelCompleted();
     }
 
@@ -63,14 +57,9 @@ public class GameManager : MonoBehaviour
     {
         if (currentSceneName == "HQMenu")
         {
-            levelHQManager.HQRuneAmount += runeCollection.runeCollected;
+            //
         }
 
-    }
-
-    private float RuneUpdater()
-    {
-        return currentAcquiredRunePower;
     }
 
 }

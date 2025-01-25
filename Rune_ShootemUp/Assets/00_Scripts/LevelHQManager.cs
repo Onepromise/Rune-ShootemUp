@@ -7,12 +7,14 @@ public class LevelHQManager : MonoBehaviour
 {
     public GameManager gameManager;
     public string sceneName;
+    public static float levelRune;
 
     //Menu Items
     public GameObject menuItems;
     public Slider HQRuneContainerSlider;
     public float HQRuneAmount;
     public float HQRuneMax;
+    public TMP_Text HQruneTotalText;
 
     //Level Menu Items
     public GameObject levelMenu;
@@ -28,9 +30,18 @@ public class LevelHQManager : MonoBehaviour
     
     public void Start() 
     {
-        
         OnMenuItemsButtonClick();
+        //HQRuneAmount +;
+        
     }
+
+
+    public void Update()
+    {
+        HQRuneContainerSlider.value = HQRuneAmount;
+        HQruneTotalText.text = HQRuneAmount.ToString();
+    }
+
     public void OnLevelButtonClick()
     {
         menuItems.SetActive(false);
