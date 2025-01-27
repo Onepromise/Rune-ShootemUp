@@ -9,12 +9,15 @@ public class LevelHQManager : MonoBehaviour
     public string sceneName;
     public static float levelRune;
 
+    //Call Scriptable Objects
+    public HQStats _stats;
+    public SOPlayerStats _playerStats;
+
     //Menu Items
     public GameObject menuItems;
     public Slider HQRuneContainerSlider;
-    public float HQRuneAmount;
-    public float HQRuneMax;
     public TMP_Text HQruneTotalText;
+    public TMP_Text HQruneMaxText;
 
     //Level Menu Items
     public GameObject levelMenu;
@@ -31,15 +34,16 @@ public class LevelHQManager : MonoBehaviour
     public void Start() 
     {
         OnMenuItemsButtonClick();
-        //HQRuneAmount +;
-        
+        _stats.HQRuneAmount += _playerStats.runeCollected;
     }
 
 
     public void Update()
     {
-        HQRuneContainerSlider.value = HQRuneAmount;
-        HQruneTotalText.text = HQRuneAmount.ToString();
+        HQRuneContainerSlider.value = _stats.HQRuneAmount;
+        HQruneTotalText.text = _stats.HQRuneAmount.ToString();
+        HQruneMaxText.text = _stats.HQRuneMax.ToString();
+
     }
 
     public void OnLevelButtonClick()

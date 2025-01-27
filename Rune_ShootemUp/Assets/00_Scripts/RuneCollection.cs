@@ -6,11 +6,15 @@ public class RuneCollection : MonoBehaviour
 
     public string runetag = "RuneOrb";
     public bool orbInside = false;
+  
+
+    //Reference to Scriptable Objects
+    public SOPlayerStats playerStats;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(runetag) && !orbInside)
+        if (other.CompareTag(runetag) && !orbInside&&!playerStats.runeBackPackFull)
         {
             orbInside = true;
             runeCollected = runeCollected + 1;
@@ -23,7 +27,6 @@ public class RuneCollection : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("I left!");
         if (other.CompareTag(runetag))
         {
             orbInside = false;

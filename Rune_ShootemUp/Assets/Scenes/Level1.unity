@@ -610,6 +610,7 @@ MonoBehaviour:
   teleporterTextIncoming: {fileID: 0}
   teleporterWarningPercent: 0
   teleporterSpawnerPercent: 0
+  playerStats: {fileID: 11400000, guid: 740a509f90abc244896b52a8195645c1, type: 2}
 --- !u!1 &856834470
 GameObject:
   m_ObjectHideFlags: 0

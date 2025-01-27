@@ -19,6 +19,9 @@ public class RuneCollectionUI : MonoBehaviour
     public float teleporterWarningPercent;
     public float teleporterSpawnerPercent;
 
+    //reference ScriptableObjects
+    public SOPlayerStats playerStats;
+
 
 
     private void Start()
@@ -29,6 +32,8 @@ public class RuneCollectionUI : MonoBehaviour
         teleporterWarningPercent = runeMaxCapacity / 2;
         teleporterSpawnerPercent = (runeMaxCapacity / 2) + (runeMaxCapacity / 4);
         teleporter.SetActive(false);
+
+        playerStats.runeBackPackFull = false;
         
 
     }
@@ -37,14 +42,25 @@ public class RuneCollectionUI : MonoBehaviour
     {
         RuneCollectionMath();
         TeleporterMath();
-        LevelHQManager.levelRune = runeCollected;
+        //stores rune Collection per level
+        
     }
 
-    private void RuneCollectionMath() 
+    private void RuneCollectionMath()
     {
-        runeCollected = runeCollection.RuneCollectionToUI();
-        runeCollected = runeCollection.runeCollected;
-        runePowerSlider.value = runeCollected;
+
+        if (runeCollected <= runeMaxCapacity)
+        {
+            runeCollected = runeCollection.RuneCollectionToUI();
+            runeCollected = runeCollection.runeCollected;
+            runePowerSlider.value = runeCollected;
+            playerStats.runeCollected = runeCollected;
+        }
+        else 
+        {
+            playerStats.runeCollected = runeMaxCapacity;
+            playerStats.runeBackPackFull = true;
+        }
     }
 
 

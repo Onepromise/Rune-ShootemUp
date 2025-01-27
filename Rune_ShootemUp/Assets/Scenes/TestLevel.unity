@@ -747,6 +747,7 @@ MonoBehaviour:
   teleporterTextIncoming: {fileID: 251702409}
   teleporterWarningPercent: 0
   teleporterSpawnerPercent: 0
+  playerStats: {fileID: 11400000, guid: 740a509f90abc244896b52a8195645c1, type: 2}
 --- !u!1 &856834470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1469,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791081971}
   m_CullTransparentMesh: 1
+--- !u!1 &1837205984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837205985}
+  - component: {fileID: 1837205986}
+  m_Layer: 0
+  m_Name: BulletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1837205985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837205984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 864935553}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1837205986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837205984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ce8276030c9874cb609db6327eb708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectilePrefab: {fileID: 5660827225051273418, guid: fbe557189f1a4ce41ab00f004e9904c3, type: 3}
+  projectileFireRate: 2
 --- !u!1001 &1894037626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1692,6 +1739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5131177964586861585, guid: 595ccd6fed64f864fa4bef4ddc879646, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 740a509f90abc244896b52a8195645c1, type: 2}
     - target: {fileID: 5879949959952318766, guid: 595ccd6fed64f864fa4bef4ddc879646, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1738,7 +1789,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6669670014763583644, guid: 595ccd6fed64f864fa4bef4ddc879646, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1837205985}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595ccd6fed64f864fa4bef4ddc879646, type: 3}
 --- !u!1660057539 &9223372036854775807

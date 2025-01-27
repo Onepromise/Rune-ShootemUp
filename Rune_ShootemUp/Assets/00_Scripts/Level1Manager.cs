@@ -9,9 +9,10 @@ public class Level1Manager : MonoBehaviour
     [SerializeField] private float spawnRadius = 10f;
     [SerializeField] private Transform target;
 
-
-
+    // Reference to Scriptable Objects
    
+
+
 
     // Update is called once per frame
     void Update()
